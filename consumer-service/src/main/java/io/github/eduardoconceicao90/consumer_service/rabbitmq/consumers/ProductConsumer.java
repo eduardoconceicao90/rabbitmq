@@ -11,12 +11,12 @@ public class ProductConsumer {
 
 //    @RabbitListener(queues = {"product.log"})
 //    public void consumerLog(ProductDTO dto) {
-//        System.out.println("Mensagem recebida pelo consumer: " + dto);
+//        System.out.println("Mensagem tipo objeto, recebida pelo consumer: " + dto);
 //    }
 
     @RabbitListener(queues = {"product.log"})
     public String consumerLog(ProductDTO dto) throws JsonProcessingException {
-        System.out.println("Mensagem recebida pelo consumer: " + dto);
+        System.out.println("Mensagem tipo objeto, recebida pelo consumer: " + dto);
 
         /* POSSO CRIAR ALGUM LOGICA E RETORNAR ESSA INFORMAÇÃO DE VOLTA AO PRODUTOR */
 
