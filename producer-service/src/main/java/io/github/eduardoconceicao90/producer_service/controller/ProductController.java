@@ -1,5 +1,6 @@
 package io.github.eduardoconceicao90.producer_service.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import io.github.eduardoconceicao90.producer_service.dto.ProductDTO;
 import io.github.eduardoconceicao90.producer_service.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class ProductController {
     public ProductService service;
 
     @PostMapping
-    public ResponseEntity<ProductDTO> createProduct(@RequestBody ProductDTO dto) {
+    public ResponseEntity<ProductDTO> createProduct(@RequestBody ProductDTO dto) throws JsonProcessingException {
         service.createProduct(dto);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }

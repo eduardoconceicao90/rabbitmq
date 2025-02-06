@@ -1,8 +1,17 @@
 package io.github.eduardoconceicao90.consumer_service.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serial;
 import java.io.Serializable;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Data
 public class ProductDTO implements Serializable {
 
     @Serial
@@ -12,45 +21,4 @@ public class ProductDTO implements Serializable {
     private String name;
     private Double price;
 
-    public ProductDTO() {
-    }
-
-    public ProductDTO(Integer id, String name, Double price) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "ProductDTO{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                '}';
-    }
 }
